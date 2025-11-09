@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de Gestión de Autores y Libros
 
-## Getting Started
+Una aplicación web moderna para gestionar autores y sus libros. Permite crear, editar, buscar y eliminar información de autores y libros de manera sencilla.
 
-First, run the development server:
+## Características
+
+- **Gestión de Autores**: Crea, edita y elimina autores con información completa (nombre, email, biografía, nacionalidad, año de nacimiento)
+- **Gestión de Libros**: Administra libros con detalles como título, descripción, ISBN, género, año de publicación y número de páginas
+- **Búsqueda Avanzada**: Busca libros por título, género, autor, y ordena los resultados
+- **Estadísticas**: Visualiza estadísticas generales sobre autores y libros
+- **Interfaz Moderna**: Diseño limpio y fácil de usar con Tailwind CSS
+
+## Cómo Empezar
+
+### Requisitos Previos
+
+- Node.js instalado en tu computadora
+- Una base de datos PostgreSQL (puedes usar una local o en la nube)
+
+### Instalación
+
+1. **Clona el repositorio** (o descarga el proyecto)
+
+```bash
+git clone https://github.com/AlesGamerADP/Lab12.git
+cd next-api-routes
+```
+
+2. **Instala las dependencias**
+
+```bash
+npm install
+```
+
+3. **Configura la base de datos**
+
+Crea un archivo `.env` en la raíz del proyecto con la siguiente información:
+
+```env
+DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/nombre_base_datos"
+```
+
+4. **Crea las tablas en la base de datos**
+
+```bash
+npx prisma migrate dev
+```
+
+5. **Inicia el servidor de desarrollo**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. **Abre tu navegador**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ve a [http://localhost:3000](http://localhost:3000) para ver la aplicación.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Cómo Usar
 
-## Learn More
+### Dashboard Principal
 
-To learn more about Next.js, take a look at the following resources:
+En la página principal encontrarás:
+- Un resumen con estadísticas (total de autores, libros, etc.)
+- Una lista de todos los autores registrados
+- Botones para crear, editar o eliminar autores
+- Opción para ver los libros de cada autor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Página de Libros
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+En la página de libros puedes:
+- Ver todos los libros registrados
+- Buscar libros por título
+- Filtrar por género o autor
+- Ordenar los resultados
+- Crear, editar o eliminar libros
 
-## Deploy on Vercel
+### Crear un Autor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Haz clic en el botón "Crear Nuevo Autor"
+2. Completa el formulario (nombre y email son obligatorios)
+3. Haz clic en "Crear"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Crear un Libro
+
+1. Ve a la página de Libros
+2. Haz clic en "Crear Nuevo Libro"
+3. Completa el formulario (título y autor son obligatorios)
+4. Haz clic en "Crear"
+
+## Tecnologías Utilizadas
+
+- **Next.js**: Framework de React para crear la aplicación
+- **React**: Biblioteca para construir la interfaz
+- **TypeScript**: Para escribir código más seguro
+- **Prisma**: Para trabajar con la base de datos
+- **PostgreSQL**: Base de datos
+- **Tailwind CSS**: Para el diseño y estilos
+
+## Notas
+
+- Asegúrate de tener PostgreSQL instalado y corriendo antes de iniciar la aplicación
+- El archivo `.env` no debe subirse a GitHub (ya está en `.gitignore`)
+- Si cambias el esquema de la base de datos, ejecuta `npx prisma migrate dev` nuevamente
+
+## Licencia
+
+Este proyecto es de uso educativo.
+
